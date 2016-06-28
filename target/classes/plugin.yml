@@ -1,3 +1,10 @@
 name: HelpingEva
 main: io.github.woodog.helpingeva.HelpingEva
 version: ${version}
+commands:
+  evapos:
+    description: Displays your position or teleports you to another.
+    usage: "Usage: '/evapos' to get current position, or '/pos x y z' to teleport to x,y,z"
+  evadebug:
+    description: Toggles your debugging status for this plugin.
+    usage: /evadebug
