@@ -1,26 +1,26 @@
 package io.github.woodog.helpingeva;
 
-import org.bukkit.Location;
+//import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
+//import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 /**
  * Handle events for all Player related events
- * @author Dinnerbone
+ * @author WooDog
  */
-public class SamplePlayerListener implements Listener {
+public class EvaPlayerListener implements Listener {
     private final HelpingEva plugin;
 
-    public SamplePlayerListener(HelpingEva instance) {
+    public EvaPlayerListener(HelpingEva instance) {
         plugin = instance;
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        plugin.getLogger().info(event.getPlayer().getName() + " joined the server! :D");
+        plugin.getLogger().info(event.getPlayer().getName() + " joined the server v0.4! :D");
     }
 
     @EventHandler
@@ -28,7 +28,7 @@ public class SamplePlayerListener implements Listener {
         plugin.getLogger().info(event.getPlayer().getName() + " left the server! :'(");
     }
 
-    @EventHandler
+/*    @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
         if (plugin.isDebugging(event.getPlayer())) {
             Location from = event.getFrom();
@@ -37,4 +37,5 @@ public class SamplePlayerListener implements Listener {
             plugin.getLogger().info(String.format("From %.2f,%.2f,%.2f to %.2f,%.2f,%.2f", from.getX(), from.getY(), from.getZ(), to.getX(), to.getY(), to.getZ()));
         }
     }
+*/
 }

@@ -1,10 +1,37 @@
 name: HelpingEva
 main: io.github.woodog.helpingeva.HelpingEva
-version: ${version}
+version: 0.q
 commands:
-  evapos:
-    description: Displays your position or teleports you to another.
-    usage: "Usage: '/evapos' to get current position, or '/pos x y z' to teleport to x,y,z"
-  evadebug:
+  eva:
+    description: Eva is a helping bot. Use /eva help for further infos.
+    usage: "Usage: '/eva help' to get more help."
+    permission: eva.basic
+    permission-message: You don't have the permission <permission>
+  eva.debug:
     description: Toggles your debugging status for this plugin.
-    usage: /evadebug
+    usage: /eva.debug
+    permission: eva.debug
+    permission-message: You don't have the permission <permission>
+  eva.reload:
+    description: Reloads Evas config file. 
+    usage: /eva.reload
+    permission: eva.reload
+    permission-message: You don't have the permission <permission>
+
+permissions:
+  eva.*:
+    description: Gives access to all helpingeva commands
+    children:
+        eva.basic: true
+        eva.debug: false
+        eva.reload: false
+    eva.basic:
+        description: Allows you to use eva basic commands
+        default: true
+    eva.debug:
+        description: Print debugging information to console
+        default: op
+    eva.reload:
+        description: Reload Evas config file
+        default: op
+      

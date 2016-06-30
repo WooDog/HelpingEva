@@ -1,0 +1,18 @@
+# default config.yml
+message: Hello World and Welcome! :)
+rules:
+  - Play Nice
+  - Respect others
+  - Have Fun
+  - Dont swear
+help:
+  - "I am Eva. Your friendly bot to automate help."
+  - "Use:"
+  - "/eva tell <user> about chunks"
+  - "to message a user the predefined message about chunks"
+  - ""
+  - "/eva.debug"
+  - "to toggle debugging."
+  - ""
+  - "/eva.reload"
+  - "to reload the config file from disk."

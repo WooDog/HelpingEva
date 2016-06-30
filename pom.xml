@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.woodog</groupId>
   <artifactId>HelpingEva</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.27-SNAPSHOT</version>
    <build>
       <plugins>
           <plugin>
