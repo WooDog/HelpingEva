@@ -18,10 +18,14 @@ public class EvaDebugCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
-            Player player = (Player) sender;
-            plugin.setDebugging(player, !plugin.isDebugging(player));
-            sender.sendMessage("Eva toggled debugging to: " + plugin.isDebugging(player));
-            return true;
+        	if (sender.hasPermission("eva.debug")) {
+        	    Player player = (Player) sender;
+	            plugin.setDebugging(player, !plugin.isDebugging(player));
+	            sender.sendMessage("Eva toggled debugging to: " + plugin.isDebugging(player));
+	            return true;
+        	} else {
+        		return false;
+        	}
         } else {
         	plugin.setGlobalDebugging(!plugin.isGlobalDebugging());
         	sender.sendMessage("Eva assumes you are THE console! Toggling globalDebug to: " + 

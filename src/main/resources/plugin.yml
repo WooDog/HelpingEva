@@ -1,37 +1,34 @@
 name: HelpingEva
 main: io.github.woodog.helpingeva.HelpingEva
-version: 0.q
+version: 0.0.62
 commands:
   eva:
     description: Eva is a helping bot. Use /eva help for further infos.
     usage: "Usage: '/eva help' to get more help."
-    permission: eva.basic
-    permission-message: You don't have the permission <permission>
   eva.debug:
     description: Toggles your debugging status for this plugin.
-    usage: /eva.debug
+    usage: "/eva.debug"
     permission: eva.debug
     permission-message: You don't have the permission <permission>
   eva.reload:
     description: Reloads Evas config file. 
-    usage: /eva.reload
+    usage: "/eva.reload"
     permission: eva.reload
     permission-message: You don't have the permission <permission>
-
 permissions:
   eva.*:
     description: Gives access to all helpingeva commands
     children:
-        eva.basic: true
-        eva.debug: false
-        eva.reload: false
-    eva.basic:
-        description: Allows you to use eva basic commands
-        default: true
-    eva.debug:
-        description: Print debugging information to console
-        default: op
-    eva.reload:
-        description: Reload Evas config file
-        default: op
+      eva.basic: true
+      eva.debug: false
+      eva.reload: false
+  eva.basic:
+    description: Allows you to use eva basic commands
+    default: true
+  eva.debug:
+    description: Print debugging information to console
+    default: op
+  eva.reload:
+    description: Reload Evas config file
+    default: op
       

@@ -1,18 +1,17 @@
-# default config.yml
-message: Hello World and Welcome! :)
-rules:
-  - Play Nice
-  - Respect others
-  - Have Fun
-  - Dont swear
+# default config.yml for HelpingEva
+config_file_version: 1.0.0
 help:
-  - "I am Eva. Your friendly bot to automate help."
-  - "Use:"
-  - "/eva tell <user> about chunks"
-  - "to message a user the predefined message about chunks"
-  - ""
-  - "/eva.debug"
-  - "to toggle debugging."
-  - ""
-  - "/eva.reload"
-  - "to reload the config file from disk."
+  - "&AI am &3Eva&A. Your friendly bot to automate help."
+  - "&AUse:"
+  - "&6/eva tell <user> about chunks"
+  - "&Ato message a user the predefined message about chunks"
+  - "&6/eva.debug"
+  - "&Ato toggle debugging."
+  - "&6/eva.reload"
+  - "&Ato reload the config file from disk."
+  - "&ASee: &6https://github.com/WooDog/HelpingEva&A for more information."
+# Single line topics only until now!
+help_topics:
+  bucket: "&AA bucket is a bucket is a bucket."
+  mods: "&AMostly useful ..."
+  source: "&6See: https://github.com/WooDog/HelpingEva"  

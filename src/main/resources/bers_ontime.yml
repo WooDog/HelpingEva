@@ -1,0 +1,23 @@
+main: de.technicalcrafters.ontime.OnTimePlugin
+version: 1.0
+author: Berserker2K3
+commands:
+  ontime:
+    description: Ontime command
+permissions:
+  ontime.*:
+    description: Users with this permission can check their ontime
+    default: true
+    children:
+      ontime.top: true
+      ontime.team: true
+      ontime.other: true
+  ontime.top:
+    description: Users with this permission can check the top-10 players ontime
+    default: op
+  ontime.team:
+    description: Users with this permission can check the ontime from team-members
+    default: op
+  ontime.other:
+    description: Users with this permission can check others ontime
+    default: op
