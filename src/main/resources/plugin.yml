@@ -1,6 +1,6 @@
 name: HelpingEva
 main: io.github.woodog.helpingeva.HelpingEva
-version: 0.0.62
+version: 0.0.64
 commands:
   eva:
     description: Eva is a helping bot. Use /eva help for further infos.
@@ -20,8 +20,8 @@ permissions:
     description: Gives access to all helpingeva commands
     children:
       eva.basic: true
-      eva.debug: false
-      eva.reload: false
+      eva.debug: op
+      eva.reload: op
   eva.basic:
     description: Allows you to use eva basic commands
     default: true

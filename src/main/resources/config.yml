@@ -2,9 +2,10 @@
 config_file_version: 1.0.0
 help:
   - "&AI am &3Eva&A. Your friendly bot to automate help."
-  - "&AUse:"
-  - "&6/eva tell <user> about chunks"
-  - "&Ato message a user the predefined message about chunks"
+  - "&6/eva tell <user> about <topic>"
+  - "&Ato message a user the predefined message about a <topic>."
+  - "&6/eva list"
+  - "&ALists all known topics."
   - "&6/eva.debug"
   - "&Ato toggle debugging."
   - "&6/eva.reload"

@@ -3,6 +3,7 @@ package io.github.woodog.helpingeva;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -90,6 +91,12 @@ public final class HelpingEva extends JavaPlugin {
 		//TODO only single line topics until now :-(
 		return colorString(this.helpTopics.get(topic));
 	}
+	
+	public String getHelpTopicsList() {
+		String delimiter = ",";
+		return StringUtils.join(helpTopics.keySet(), delimiter);
+	}
+	
     
     public void debugPrint(final CommandSender sender, String message) {
     	if (!(sender instanceof Player)) {

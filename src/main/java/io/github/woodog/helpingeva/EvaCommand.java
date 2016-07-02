@@ -45,6 +45,11 @@ public class EvaCommand implements CommandExecutor {
 		if (cmd.equals("help")) {
 			return sendText(sender, "help");
 			
+		} else if (cmd.equals("list")) {
+			sender.sendMessage(plugin.colorString("&AI know the following topics:"));
+			sender.sendMessage(plugin.colorString("&A" + plugin.getHelpTopicsList()));
+			return true;
+			
 		} else if (cmd.equals("tell")) {
 			// TODO: Add permissions check here for sub commands
 			// Usage: /eva tell WooDog about tips
