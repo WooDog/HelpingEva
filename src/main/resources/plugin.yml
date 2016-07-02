@@ -1,6 +1,6 @@
-name: HelpingEva
+name: ${project.artifactId}
 main: io.github.woodog.helpingeva.HelpingEva
-version: 0.0.64
+version: ${project.version}
 commands:
   eva:
     description: Eva is a helping bot. Use /eva help for further infos.

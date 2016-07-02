@@ -2,7 +2,7 @@
 config_file_version: 1.0.0
 help:
   - "&AI am &3Eva&A. Your friendly bot to automate help."
-  - "&6/eva tell <user> about <topic>"
+  - "&6/eva tell <user> <topic>"
   - "&Ato message a user the predefined message about a <topic>."
   - "&6/eva list"
   - "&ALists all known topics."
