@@ -10,26 +10,43 @@ Sources can be found on [Github](https://github.com/WooDog/HelpingEva).
 
 ## Commands
 
-/eva
+    /eva
 Displays the exact coordinates of the player.
 
-/eva help
+
+&nbsp;
+
+    /eva help
 Displays evas help.
 
-/eva list
+
+&nbsp; 
+
+    /eva list
 Lists all help topics.
 
-/eva tell <player> <topic>
+
+&nbsp; 
+
+    /eva tell <player> <topic>
 Writes information on the topic in the players game chat.
 
-/eva.debug
+
+&nbsp; 
+
+    /eva.debug
 When given as a player it toggles debugging info's to the console for this player.
 When given from console it toggles debugging info's for all players.
 
-/eva.reload
+
+&nbsp;	 
+
+    /eva.reload
 Reloads configuration from disk. 
 Usually located in <server home>/plugins/HelpingEva/config.yml
 
+
+&nbsp; 
 
 ### config.yml example
     # default config.yml for HelpingEva
