@@ -75,6 +75,8 @@ public class EvaCommand implements CommandExecutor {
 					String topic = split[i].toLowerCase();
 					if (plugin.hasHelpTopic(topic)) {
 						sendTopic(sender, receiver, topic);
+					} else {
+						sender.sendMessage("Help topic " + topic + " not found!");
 					}
 				}
 			}
