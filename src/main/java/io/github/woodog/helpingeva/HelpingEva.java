@@ -8,11 +8,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class HelpingEva extends JavaPlugin {
-	private final EvaPlayerListener playerListener = new EvaPlayerListener(this);
 	private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();
 	private final HashMap<String, String> helpTopics = new HashMap<>();
 	private boolean globalDebug = false;
@@ -33,8 +31,6 @@ public final class HelpingEva extends JavaPlugin {
 		this.saveDefaultConfig();
 
 		// Register our events
-		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvents(playerListener, this);
 
 		// Initialize helpTopics
 		this.initHelpTopics();

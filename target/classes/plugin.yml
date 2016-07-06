@@ -1,8 +1,6 @@
-#name: HelpingEva
 name: HelpingEva
 main: io.github.woodog.helpingeva.HelpingEva
-#version: 0.0.64
-version: 0.0.65-SNAPSHOT
+version: 0.1.0-SNAPSHOT
 commands:
   eva:
     description: Eva is a helping bot. Use /eva help for further infos.
