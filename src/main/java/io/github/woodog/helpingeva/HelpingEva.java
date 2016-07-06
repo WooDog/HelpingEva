@@ -49,7 +49,7 @@ public final class HelpingEva extends JavaPlugin {
 		helpTopics.clear();
 		final Map<String, Object> values = this.getConfig().getConfigurationSection("help_topics").getValues(false);
 		for (Map.Entry<String, Object> entry : values.entrySet()) {
-			helpTopics.put(entry.getKey(), entry.getValue().toString());
+			helpTopics.put(entry.getKey().toLowerCase(), entry.getValue().toString());
 		}
 		getLogger().info("Initializing helpTopics done.");
 	}
@@ -87,7 +87,7 @@ public final class HelpingEva extends JavaPlugin {
 	}
 
 	public String getHelpTopicsList() {
-		String delimiter = ",";
+		String delimiter = ", ";
 		return StringUtils.join(helpTopics.keySet(), delimiter);
 	}
 
