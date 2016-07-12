@@ -3,6 +3,7 @@
 ## Version 1.0.0 - depreciated
 
 First config file. Help topics in one line as a string.
+Simple chat colors are supported.
 
 Example:
 

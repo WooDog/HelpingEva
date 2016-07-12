@@ -48,26 +48,9 @@ Usually located in <server home>/plugins/HelpingEva/config.yml
 
 &nbsp; 
 
-### config.yml example
-    # default config.yml for HelpingEva
-	config_file_version: 1.0.0
-	help:
-	  - "&AI am &3Eva&A. Your friendly bot to automate help."
-	  - "&6/eva tell <user> <topic>"
-	  - "&Ato message a user the predefined message about a <topic>."
-	  - "&6/eva list"
-	  - "&ALists all known topics."
-	  - "&6/eva.debug"
-	  - "&Ato toggle debugging."
-	  - "&6/eva.reload"
-	  - "&Ato reload the config file from disk."
-	  - "&ASee: &6https://github.com/WooDog/HelpingEva&A for more information."
-	# Single line topics only until now!
-	help_topics:
-	  bucket: "&AA bucket is a bucket is a bucket."
-	  mods: "&AMostly useful ..."
-	  source: "&6See: https://github.com/WooDog/HelpingEva"  
+### config.yml 
 
-Simple chat colors are supported.
+see [Config_files.md](./Config_files.md)
+
 
  
