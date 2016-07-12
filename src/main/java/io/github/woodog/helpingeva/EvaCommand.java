@@ -1,6 +1,5 @@
 package io.github.woodog.helpingeva;
 
-import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -44,7 +43,7 @@ public class EvaCommand implements CommandExecutor {
 		Player receiver = null;
 
 		if (cmd.equals("help")) {
-			return sendText(sender, "help");
+			return plugin.sendHelp(sender);
 
 		} else if (cmd.equals("list")) {
 			sender.sendMessage(plugin.colorString("&AI know the following topics:"));
@@ -74,7 +73,7 @@ public class EvaCommand implements CommandExecutor {
 				for (int i = 2; i < split.length; i++) {
 					String topic = split[i].toLowerCase();
 					if (plugin.hasHelpTopic(topic)) {
-						sendTopic(sender, receiver, topic);
+						plugin.sendTopic(sender, receiver, topic);
 					} else {
 						sender.sendMessage("Help topic " + topic + " not found!");
 					}
@@ -91,23 +90,4 @@ public class EvaCommand implements CommandExecutor {
 
 		return false;
 	}
-
-	private void sendTopic(CommandSender sender, Player receiver, String topic) {
-		receiver.sendMessage(
-				plugin.colorString("&AI am &3Eva&A. " + sender.getName() + " asked me to tell you about:"));
-		if (plugin.hasHelpTopic(topic)) {
-			receiver.sendMessage(plugin.colorString("&A" + topic));
-			receiver.sendMessage(plugin.getHelpTopic(topic));
-			sender.sendMessage("Eva: I told " + receiver.getName() + " about " + topic);
-		}
-	}
-
-	private boolean sendText(CommandSender sender, String topic) {
-		List<String> text = plugin.getConfig().getStringList(topic);
-		for (String line : text) {
-			sender.sendMessage(plugin.colorString(line));
-		}
-		return true;
-	}
-
 }

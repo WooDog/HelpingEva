@@ -1,6 +1,7 @@
 package io.github.woodog.helpingeva;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -107,4 +108,24 @@ public final class HelpingEva extends JavaPlugin {
 	public String colorString(String s) {
 		return ChatColor.translateAlternateColorCodes('&', s);
 	}
+	
+
+	public boolean sendHelp(CommandSender sender) {
+		List<String> text = this.getConfig().getStringList("help");
+		for (String line : text) {
+			sender.sendMessage(this.colorString(line));
+		}
+		return true;
+	}
+
+	public void sendTopic(CommandSender sender, Player receiver, String topic) {
+		receiver.sendMessage(
+				this.colorString("&AI am &3Eva&A. " + sender.getName() + " asked me to tell you about:"));
+		if (this.hasHelpTopic(topic)) {
+			receiver.sendMessage(this.colorString("&A" + topic));
+			receiver.sendMessage(this.getHelpTopic(topic));
+			sender.sendMessage("Eva: I told " + receiver.getName() + " about " + topic);
+		}
+	}
+
 }
