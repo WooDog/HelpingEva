@@ -27,7 +27,7 @@ Example:
 	  
 ## Version 1.0.1
 
-Addition of multiline topics
+Addition of multi line topics
 
 Example:
 
@@ -44,15 +44,16 @@ Example:
 	  - "&6/eva.reload"
 	  - "&Ato reload the config file from disk."
 	  - "&ASee: &6https://github.com/WooDog/HelpingEva&A for more information."
-	# Single line topics only until now!
-	help_topics:
-	  bucket: 
-	    type: string 
-	    data: "&AA bucket is a bucket is a bucket."
-	  mods: 
-	    type: string
-	    data: "&AMostly useful ..."
-	  source: 
-	    type: string
-	    data: "&6See: https://github.com/WooDog/HelpingEva"  
-
+		help_topics:
+		  bucket: 
+		    type: string 
+		    data: "&AA bucket is a bucket is a bucket."
+		  mods: 
+		    type: stringList
+		    data: 
+		      - "&AMostly useful ..."
+		      - "2nd line"
+		      - "3rd and last line"
+		  source: 
+		    type: string
+		    data: "&6See: https://github.com/WooDog/HelpingEva"  

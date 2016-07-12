@@ -92,14 +92,4 @@ public final class HelpingEva extends JavaPlugin {
 		return true;
 	}
 
-	public void sendTopic(CommandSender sender, Player receiver, String topic) {
-		receiver.sendMessage(
-				this.colorString("&AI am &3Eva&A. " + sender.getName() + " asked me to tell you about:"));
-		if (this.evaTopics.hasHelpTopic(topic)) {
-			receiver.sendMessage(this.colorString("&A" + topic));
-			receiver.sendMessage(this.evaTopics.getHelpTopic(topic));
-			sender.sendMessage("Eva: I told " + receiver.getName() + " about " + topic);
-		}
-	}
-
 }

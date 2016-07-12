@@ -17,8 +17,11 @@ help_topics:
     type: string 
     data: "&AA bucket is a bucket is a bucket."
   mods: 
-    type: string
-    data: "&AMostly useful ..."
+    type: stringList
+    data: 
+      - "&AMostly useful ..."
+      - "2nd line"
+      - "3rd and last line"
   source: 
     type: string
     data: "&6See: https://github.com/WooDog/HelpingEva"  
