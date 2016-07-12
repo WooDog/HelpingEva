@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
  * 
  * @author WooDog
  */
+
 public class EvaCommand implements CommandExecutor {
 	private final HelpingEva plugin;
 
@@ -64,7 +65,7 @@ public class EvaCommand implements CommandExecutor {
 				}
 				if (receiver == null) {
 					sender.sendMessage(split[1] + " is not online!");
-					return false;
+					return true;
 				}
 			}
 

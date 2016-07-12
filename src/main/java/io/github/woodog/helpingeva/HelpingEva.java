@@ -33,7 +33,6 @@ public final class HelpingEva extends JavaPlugin {
 
 		// Initialize helpTopics
 		this.evaTopics = new EvaTopics(this);
-		
 
 		// Register our commands
 		getCommand("eva").setExecutor(new EvaCommand(this));
@@ -44,8 +43,6 @@ public final class HelpingEva extends JavaPlugin {
 		getLogger().info(pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!");
 		
 	}
-
-
 
 	public boolean isDebugging(final Player player) {
 		if (this.isGlobalDebugging()) {
@@ -87,7 +84,6 @@ public final class HelpingEva extends JavaPlugin {
 		return ChatColor.translateAlternateColorCodes('&', s);
 	}
 	
-
 	public boolean sendHelp(CommandSender sender) {
 		List<String> text = this.getConfig().getStringList("help");
 		for (String line : text) {
