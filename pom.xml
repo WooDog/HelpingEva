@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.woodog</groupId>
 	<artifactId>HelpingEva</artifactId>
-	<version>0.1.15-topics_from_file-SNAPSHOT</version>
+	<version>0.1.7-SNAPSHOT</version>
 	<build>
 		<resources>
 			<resource>
