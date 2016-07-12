@@ -47,12 +47,12 @@ public class EvaCommand implements CommandExecutor {
 
 		} else if (cmd.equals("list")) {
 			sender.sendMessage(plugin.colorString("&AI know the following topics:"));
-			sender.sendMessage(plugin.colorString("&A" + plugin.getHelpTopicsList()));
+			sender.sendMessage(plugin.colorString("&A" + plugin.evaTopics.getHelpTopicsList()));
 			return true;
 
 		} else if (cmd.equals("tell")) {
 			// TODO: Add permissions check here for sub commands
-			// Usage: /eva tell WooDog about tips
+			// Usage: /eva tell WooDog  tips
 
 			// User given?
 			if (split.length >= 2) {
@@ -72,7 +72,7 @@ public class EvaCommand implements CommandExecutor {
 			if (split.length >= 3) {
 				for (int i = 2; i < split.length; i++) {
 					String topic = split[i].toLowerCase();
-					if (plugin.hasHelpTopic(topic)) {
+					if (plugin.evaTopics.hasHelpTopic(topic)) {
 						plugin.sendTopic(sender, receiver, topic);
 					} else {
 						sender.sendMessage("Help topic " + topic + " not found!");

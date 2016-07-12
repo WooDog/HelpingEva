@@ -20,7 +20,7 @@ public class EvaReloadCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] arg3) {
 		if (sender.hasPermission("eva.debug")) {
 			plugin.reloadConfig();
-			plugin.initHelpTopics();
+			plugin.evaTopics.initTopics();
 			plugin.getLogger().info("Eva reloaded config file from disk, triggered by " + sender.getName());
 			if (sender instanceof Player) {
 				sender.sendMessage("Eva reloaded config file from disk.");

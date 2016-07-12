@@ -2,9 +2,6 @@ package io.github.woodog.helpingeva;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -13,7 +10,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class HelpingEva extends JavaPlugin {
 	private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();
-	private final HashMap<String, String> helpTopics = new HashMap<>();
+
+	public EvaTopics evaTopics;
 	private boolean globalDebug = false;
 
 	@Override
@@ -34,7 +32,8 @@ public final class HelpingEva extends JavaPlugin {
 		// Register our events
 
 		// Initialize helpTopics
-		this.initHelpTopics();
+		this.evaTopics = new EvaTopics(this);
+		
 
 		// Register our commands
 		getCommand("eva").setExecutor(new EvaCommand(this));
@@ -43,17 +42,10 @@ public final class HelpingEva extends JavaPlugin {
 
 		PluginDescriptionFile pdfFile = this.getDescription();
 		getLogger().info(pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!");
+		
 	}
 
-	public void initHelpTopics() {
-		getLogger().info("Initializing helpTopics ...");
-		helpTopics.clear();
-		final Map<String, Object> values = this.getConfig().getConfigurationSection("help_topics").getValues(false);
-		for (Map.Entry<String, Object> entry : values.entrySet()) {
-			helpTopics.put(entry.getKey().toLowerCase(), entry.getValue().toString());
-		}
-		getLogger().info("Initializing helpTopics done.");
-	}
+
 
 	public boolean isDebugging(final Player player) {
 		if (this.isGlobalDebugging()) {
@@ -76,20 +68,6 @@ public final class HelpingEva extends JavaPlugin {
 
 	public void setGlobalDebugging(final boolean value) {
 		globalDebug = value;
-	}
-
-	public boolean hasHelpTopic(final String topic) {
-		return this.helpTopics.containsKey(topic);
-	}
-
-	public String getHelpTopic(String topic) {
-		// TODO only single line topics until now :-(
-		return colorString(this.helpTopics.get(topic));
-	}
-
-	public String getHelpTopicsList() {
-		String delimiter = ", ";
-		return StringUtils.join(helpTopics.keySet(), delimiter);
 	}
 
 	public void debugPrint(final CommandSender sender, String message) {
@@ -121,9 +99,9 @@ public final class HelpingEva extends JavaPlugin {
 	public void sendTopic(CommandSender sender, Player receiver, String topic) {
 		receiver.sendMessage(
 				this.colorString("&AI am &3Eva&A. " + sender.getName() + " asked me to tell you about:"));
-		if (this.hasHelpTopic(topic)) {
+		if (this.evaTopics.hasHelpTopic(topic)) {
 			receiver.sendMessage(this.colorString("&A" + topic));
-			receiver.sendMessage(this.getHelpTopic(topic));
+			receiver.sendMessage(this.evaTopics.getHelpTopic(topic));
 			sender.sendMessage("Eva: I told " + receiver.getName() + " about " + topic);
 		}
 	}
