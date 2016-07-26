@@ -28,6 +28,10 @@ public final class HelpingEva extends JavaPlugin {
 	public void onEnable() {
 		// Save a copy of the default config.yml if one is not there
 		this.saveDefaultConfig();
+		
+		// language management
+		//String path = config.getString("path");
+		//path = path.replaceAll("%variable%", "example");
 
 		// Register our events
 
@@ -41,7 +45,7 @@ public final class HelpingEva extends JavaPlugin {
 
 		PluginDescriptionFile pdfFile = this.getDescription();
 		getLogger().info(pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!");
-		
+
 	}
 
 	public boolean isDebugging(final Player player) {
@@ -83,7 +87,7 @@ public final class HelpingEva extends JavaPlugin {
 	public String colorString(String s) {
 		return ChatColor.translateAlternateColorCodes('&', s);
 	}
-	
+
 	public boolean sendHelp(CommandSender sender) {
 		List<String> text = this.getConfig().getStringList("help");
 		for (String line : text) {

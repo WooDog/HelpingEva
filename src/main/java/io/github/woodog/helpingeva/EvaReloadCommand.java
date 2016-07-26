@@ -7,14 +7,15 @@ import org.bukkit.entity.Player;
 
 /**
  * Handler for the /eva.reload command.
+ * 
  * @author WooDog
  */
 public class EvaReloadCommand implements CommandExecutor {
 	private final HelpingEva plugin;
 
 	public EvaReloadCommand(HelpingEva plugin) {
-        this.plugin = plugin;
-    }
+		this.plugin = plugin;
+	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] arg3) {

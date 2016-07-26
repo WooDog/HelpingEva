@@ -1,6 +1,8 @@
 name: ${project.artifactId}
 main: io.github.woodog.helpingeva.HelpingEva
 version: ${project.version}
+author: WooDog <WooDog@users.noreply.github.com>
+description: HelpingEva is your friendly bot to assist mods and admins.
 commands:
   eva:
     description: Eva is a helping bot. Use /eva help for further infos.

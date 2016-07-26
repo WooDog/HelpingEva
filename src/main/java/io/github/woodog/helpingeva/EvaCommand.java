@@ -1,6 +1,5 @@
 package io.github.woodog.helpingeva;
 
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -32,28 +31,23 @@ public class EvaCommand implements CommandExecutor {
 	public boolean noCommandParam(CommandSender sender) {
 		Player player = (Player) sender;
 		Location location = player.getLocation();
-
 		player.sendMessage("You are currently at " + location.getX() + "," + location.getY() + "," + location.getZ()
 				+ " with " + location.getYaw() + " yaw and " + location.getPitch() + " pitch");
-
 		return true;
 	}
 
 	private boolean multipleCommandParam(CommandSender sender, Command command, String label, String[] split) {
 		String cmd = split[0].toLowerCase();
 		Player receiver = null;
-
 		if (cmd.equals("help")) {
 			return plugin.sendHelp(sender);
-
 		} else if (cmd.equals("list")) {
 			sender.sendMessage(plugin.colorString("&AI know the following topics:"));
 			sender.sendMessage(plugin.colorString("&A" + plugin.evaTopics.getHelpTopicsList()));
 			return true;
-
 		} else if (cmd.equals("tell")) {
 			// TODO: Add permissions check here for sub commands
-			// Usage: /eva tell WooDog  tips
+			// Usage: /eva tell WooDog bucket
 
 			// User given?
 			if (split.length >= 2) {
@@ -86,8 +80,6 @@ public class EvaCommand implements CommandExecutor {
 		plugin.debugPrint(sender, "Command is: " + command);
 		plugin.debugPrint(sender, "Label is: " + label);
 		plugin.debugPrint(sender, "cmd is: " + cmd);
-		plugin.debugPrint(sender, "Split is: " + StringUtils.join(split, " "));
-		plugin.debugPrint(sender, "Lenght of Split is: " + split.length);
 
 		return false;
 	}
